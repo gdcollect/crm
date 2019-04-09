@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+{% load static %}
+<head>
+<link rel="stylesheet"  href="{% static 'dhmoi/style.css' %}" />
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+</head>
+<body>
+	{% block body %}
+	<div class="header">
+  <h2>ACS Services</h2>
+  <h3>Άδειες</h3>
+  </div></p>
+<div class="form-row" style="clear:both;">
+  <a href="{% url 'adeia_new' %}"  class="addnewbtn btn btn-info">Νέα Άδεια</a> 
+    </div><br><br>
+<table border="1" width="1600" id="myTable">
+	<tr>
+		<th>Υπάλληλος</th>
+		<th>Τύπος Άδειας</th>
+		<th>Αρχή</th>
+		<th>Τέλος</th>
+		<th>Ημ. Δημιουργίας</th>
+		<th>Edit</th>
+	</tr>
+	{% for adeia in alladeies %}
+	<tr>
+		<td>{{adeia.employee.get_full_name}}</td>
+		<td>{{adeia.get_adeiatype_display}}</td>
+		<td>{{adeia.startdate}}</td>
+		<td>{{adeia.enddate}}</td>
+		<td>{{adeia.createddate}}</td>
+		<td style="width:7%;"><a class="btn btn-default" href="{% url 'adeia_update' pk=adeia.pk %}"><span class="glyphicon glyphicon-pencil" style="color: green;"></span></a>|<a class="btn btn-default" onclick="return confirm('Είστε σίγουρος/η για την διαγραφή;');" href="{% url 'delete_adeia' pk=adeia.pk %}"><span class="glyphicon glyphicon-trash" style="color: red;"></span></a></td>
+	</tr>
+	{% endfor %}
+
+</table>
+
+	{% endblock %}
+	
+</body>

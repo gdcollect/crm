@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load crispy_forms_tags %}
+{% block body %}
+
+<link rel="stylesheet"  href="{% static 'dhmoi/style.css' %}" />
+    <h2 class="post-form" style="color:red; font-family: Courier New, monospace; text-align: center;"><b>Νέα Άδεια</b></h2></br>
+    <form method="POST" class="post-form-adeia-new">{% csrf_token %}
+        <div class="form-row">
+        	<div class="form-group col-md-3 mb-0">
+        		{{adeiaform.employee|as_crispy_field}}
+        	</div>
+        	<div class="form-group col-md-3 mb-0">
+        		{{adeiaform.adeiatype|as_crispy_field}}
+        	</div>
+        	<div class="form-group col-md-3 mb-0">
+        		{{adeiaform.startdate|as_crispy_field}}
+        	</div>
+        </div>
+        <div class="form-row">
+        	<div class="form-group col-md-3 mb-0">
+        		{{adeiaform.enddate|as_crispy_field}}
+        	</div>
+        	<div class="form-group col-md-3 mb-0">
+        		{{adeiaform.createddate|as_crispy_field}}
+        	</div>
+        </div>
+        <div class="form-row" style="clear:both;">
+        <button type="submit" class="save addnewbtn btn-success">Αποθήκευση</button>
+    </div>
+    </form>
+{% endblock %}

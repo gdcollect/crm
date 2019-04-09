@@ -1,0 +1,47 @@
+{% load static %}
+<html>
+<head>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <link rel="stylesheet"  href="{% static 'dhmoi/style.css' %}" />
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+	<title>{% block title %} Acs Services|Μαζιώτης Σταύρος{% endblock %}</title>
+	</head>
+<body>
+	<nav class="navbar navbar">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#"style="color:white;">Acs Services v.3.5</a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li class="active"><a href="/">Αρχική</a></li>
+      <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Πελάτες<span class="caret"></span></a>
+        <ul class="dropdown-menu">
+          <li><a href="/">Δήμοι - Πελάτες</a></li>
+          <li><a href="{% url 'employee' %}">Στοιχεία Υπαλλήλων</a></li>
+          <li><a href="{% url 'aithmata' %}">Αιτήματα</a></li>
+        </ul>
+      </li>
+      <li><a href="{% url 'service' %}">Service</a></li>
+      <li><a href="{% url 'ergasies' %}">Εργασίες</a></li>
+      <li><a href="{% url 'adeia' %}">Άδειες</a></li>
+      <li><a href="{% url 'admin:index' %}" style="color:red;"><b>Διαχείριση</b></a></li>
+      <li><a href="/login">Εξοδος</a></li>
+    </ul>
+
+  </div>
+</nav>
+  {% if user.is_authenticated %}
+  <p class=loguser "><b>Συνδεδεμένος χρήστης:</b> {{ user.first_name }} {{ user.last_name }} </p>
+  {% endif %}
+		{% block body %}
+    {% endblock %}
+    
+</body>
+
+</html>
+
+
+
+

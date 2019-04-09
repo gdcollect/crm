@@ -1,0 +1,169 @@
+
+.header{
+    text-align: center;
+    color: #000080 ;
+}
+
+
+.active {
+    color: black;
+
+}
+
+.loguser{
+    font-family: Courier New, monospace;
+    font-size: large;
+    text-align: center;
+}
+
+   
+.container-fluid{
+    background-color: #000080;
+    
+}
+
+li a{
+    
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-family: Courier New, monospace;
+    font-size: medium;
+}
+
+.li exit a {
+    position: relative;
+}
+
+.post-form {
+    width: 640px;
+    margin: 0px auto;
+    
+    }
+
+/* Φόρμα εργασίας new*/
+.post-form-ergasies-new{
+  width: 100%;
+  margin: 0px auto;
+}
+
+/* Φόρμα άδειας new*/
+.post-form-adeia-new{
+  width: 60%;
+  margin: 0px auto;
+}
+
+/* Φόρμα service new*/
+.post-form-service-new{
+  width: 100%;
+  margin: 0px auto;
+}
+
+/* Φόρμα aithmata new*/
+.post-form-aithma-new{
+  width: 60%;
+  margin: 0px auto;
+}
+
+/* Φόρμα employee new*/
+.post-form-aithma-new{
+  width: 70%;
+  margin: 0px auto;
+}
+
+/* Φόρμα dhmos new*/
+.post-form-aithma-new{
+  width: 100%;
+  margin: 0px auto;
+}
+
+/* Κουμπί Save για όλες τις φόρμες */
+.save{
+
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  margin-left:35px;
+}
+
+.addnewbtn{
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  font-weight: bold;
+  margin-left:15px;
+ }
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+ 
+}
+
+th, td {
+  text-align: left;
+  padding: 8px;
+  font-family: Courier New, monospace;
+}
+
+tr:nth-child(even){background-color: #f2f2f2}
+
+th {
+  background-color: #000080;
+  color: white;
+}
+
+
+#myInput {
+  background-position: 10px 10px;
+  background-repeat: no-repeat;
+  width: 40%;
+  font-size: 16px;
+  padding: 12px 20px 12px 40px;
+  border: 1px solid #ddd;
+  margin-bottom: 12px;
+  border-radius: 30px;
+  border-color: #ff4000;
+}
+
+.myTable {
+
+     auto; width: 100%;
+     font-family: Courier New, monospace;
+
+}
+
+input[type="button"] {
+    transition: all .3s;
+    border: 1px solid #ddd;
+    padding: 8px 16px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 15px;
+}
+
+input[type="button"]:not(.active) {
+    background-color:transparent;
+}
+
+.active {
+    background-color: #ff4d4d;
+    color :#fff;
+}
+
+input[type="button"]:hover:not(.active) {
+    background-color: #ddd;
+}

@@ -1,0 +1,20 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Είσοδος</title>
+    <link rel="stylesheet" href="{% static 'dhmoi/register.css' %}" type="text/css">
+</head>
+<body>
+    <form method="POST">
+        {% csrf_token %}
+        <div class="login">
+            <h2 style="text-align: center; color: #000080;">ACS Services</h2></br>
+  <h1>Είσοδος στην Εφαρμογή</h1>
+    <p><input type="text" name="username" value="" placeholder="Username"></p>
+    <p><input type="password" name="password" value="" placeholder="Password"></p>
+    <p class="submit"><input type="submit" name="commit" value="Είσοδος"></p>
+  </form>
+</div>
+</body>
+</html>

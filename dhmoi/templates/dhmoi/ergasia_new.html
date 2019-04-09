@@ -1,0 +1,65 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load crispy_forms_tags %}
+{% block body %}
+
+<link rel="stylesheet"  href="{% static 'dhmoi/style.css' %}" />
+    <h2 class="post-form" style="color:red; font-family: Courier New, monospace; text-align: center;"><b>Νέα Εργασία</b></h2></br>
+    <form method="POST" class="post-form-ergasies-new">{% csrf_token %}
+    	<div class="form-row">
+    		<div class="form-group col-md-3 mb-0">
+        {{ form.dhmos|as_crispy_field }} 
+    </div>
+    <div class="form-group col-md-3 mb-0">
+        {{ form.importdate|as_crispy_field }} 
+    </div>
+</div>
+<div class="form-row">
+    		<div class="form-group col-md-3 mb-0">
+        {{ form.app|as_crispy_field }} 
+    </div>
+    <div class="form-group col-md-3 mb-0">
+        {{ form.jobtype|as_crispy_field }} 
+    </div>
+    <div class="form-row">
+    		<div class="form-group col-md-3 mb-0">
+        {{ form.name|as_crispy_field }} 
+    </div>
+    <div class="form-group col-md-3 mb-0">
+        {{ form.time|as_crispy_field }} 
+    </div>
+</div>
+ <div class="form-row">
+    		<div class="form-group col-md-3 mb-0">
+        {{ form.employee|as_crispy_field }} 
+    </div>
+    <div class="form-group col-md-3 mb-0">
+        {{ form.ticketid|as_crispy_field }} 
+    </div>
+</div>
+
+
+    <div class="form-row">
+    		<div class="form-group col-md-6 mb-0" style="width: 950px;">
+        {{ form.info|as_crispy_field }} 
+    </div>
+</div>
+
+<div class="form-row">
+    		<div class="form-group col-md-6 mb-0" style="width: 950px;">
+        {{ form.text|as_crispy_field }} 
+    </div>
+</div>
+<div class="form-row" style="clear:both;">
+        <button type="submit" class="save addnewbtn btn-success">Αποθήκευση</button>
+        <a href="{% url 'employee_new' %}" target="_blank" class="addnewbtn btn btn-primary">Νέος Υπάλληλος</a>
+        <a href="{% url 'dhmos_new' %}" target="_blank" class="addnewbtn btn btn-warning">Νέος Πελάτης</a>
+    </div>
+
+
+       
+    
+ 
+
+    </form>
+{% endblock %}
